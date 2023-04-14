@@ -4,17 +4,13 @@ import useGeoLocation from './useGeolocation';
 
 function App() {
   const [count, setCount] = React.useState(0);
-  const location = useGeoLocation();
-  const [locate, setLocate] = useState([]);
   const [placeh, setPlaceh] = useState('unknown location');
-  const { latitude, longitude, error } = useGeoLocation();
+  const { latitude, longitude, error } = useState(useGeoLocation());
   const apiKey = 'AIzaSyA2Le07ANd2cVOo8C2GY2TmQ0xPPyiZ0yA';
-  const url =
-    'https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}';
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
   const [tableData, setTableData] = useState([
     { id: 1, name: 'United States', counter: 0 },
     { id: 2, name: 'India', counter: 0 },
-    { id: 3, name: 'Total', counter: 0 },
   ]);
 
   React.useEffect(() => {
@@ -26,7 +22,7 @@ function App() {
           component.types.includes('administrative_area_level_1')
         ).long_name;
         console.log(region);
-        setPlacehold((placehold) => region);
+        setPlaceh((placehold) => JSON.stringify(region));
       })
       .catch((error) => console.error(error));
   }, []);
