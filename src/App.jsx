@@ -4,7 +4,7 @@ import useGeoLocation from './useGeolocation';
 
 function App() {
   const [count, setCount] = React.useState(0);
-  const [placeh, setPlaceh] = useState('unknown location');
+  const [placeh, setPlaceh] = useState('unknown');
   const { latitude, longitude, error } = useState(useGeoLocation());
   const apiKey = 'AIzaSyA2Le07ANd2cVOo8C2GY2TmQ0xPPyiZ0yA';
   const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
@@ -44,8 +44,8 @@ function App() {
         </button>
       </div>
       <div>
-        <p>Table/Map comes here</p>
-        <h3>{placeh}</h3>
+        <h3>Location: {placeh}</h3>
+        <p>Geographic distribution table(Static)</p>
         <table>
           <thead>
             <tr>
