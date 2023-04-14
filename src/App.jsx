@@ -45,7 +45,7 @@ function App() {
       </div>
       <div>
         <h3>Location: {placeh}</h3>
-        <p>Geographic distribution table(Static)</p>
+        <p>Geographic distribution table</p>
         <table>
           <thead>
             <tr>
