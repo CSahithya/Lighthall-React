@@ -26,7 +26,7 @@ function App() {
         </button>
       </div>
       <div>
-        <h2>Map</h2>
+        <p>Table/Map comes here</p>
         <Table />
       </div>
     </div>
