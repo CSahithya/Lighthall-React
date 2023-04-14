@@ -6,6 +6,7 @@ function App() {
   const [count, setCount] = React.useState(0);
   const location = useGeoLocation();
   const [locate, setLocate] = useState([]);
+  const [placeh, setPlaceh] = useState('unknown location');
   const { latitude, longitude, error } = useGeoLocation();
   const apiKey = 'AIzaSyA2Le07ANd2cVOo8C2GY2TmQ0xPPyiZ0yA';
   const url =
@@ -48,6 +49,7 @@ function App() {
       </div>
       <div>
         <p>Table/Map comes here</p>
+        <h3>{placeh}</h3>
         <table>
           <thead>
             <tr>
