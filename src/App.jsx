@@ -5,9 +5,9 @@ import useGeoLocation from './useGeolocation';
 function App() {
   const [count, setCount] = React.useState(0);
   const [placeh, setPlaceh] = useState('unknown');
-  const location = useGeoLocation();
+  const { latitude, longitude, error } = useGeoLocation();
   const apiKey = 'AIzaSyA2Le07ANd2cVOo8C2GY2TmQ0xPPyiZ0yA';
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coordinates.lat},${location.coordinates.lng}&key=${apiKey}`;
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
   const [tableData, setTableData] = useState([
     { id: 1, name: 'United States', counter: 0 },
     { id: 2, name: 'India', counter: 0 },
