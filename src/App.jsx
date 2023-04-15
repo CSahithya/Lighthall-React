@@ -4,7 +4,7 @@ import useGeoLocation from './useGeolocation';
 
 function App() {
   const [count, setCount] = React.useState(0);
-  const [placeh, setPlaceh] = useState('unknown');
+  const [placeh, setPlaceh] = React.useState('unknown');
   const location = useGeoLocation();
   const apiKey = 'AIzaSyA2Le07ANd2cVOo8C2GY2TmQ0xPPyiZ0yA';
   const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coordinates.lat},${location.coordinates.lng}&key=${apiKey}`;
@@ -22,7 +22,7 @@ function App() {
           component.types.includes('administrative_area_level_1')
         ).long_name;
         console.log(region);
-        setPlaceh((placehold) => JSON.stringify(region));
+        setPlaceh((placeh) => JSON.stringify(region));
       })
       .catch((error) => console.error(error));
   }, []);
