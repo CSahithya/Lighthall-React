@@ -22,7 +22,9 @@ function App() {
           component.types.includes('administrative_area_level_1')
         ).long_name;
         console.log(region);
-        setPlaceh((placehold) => JSON.stringify(region));
+        if (region) {
+          setPlaceh((placeh) => JSON.stringify(region));
+        }
       })
       .catch((error) => console.error(error));
   }, []);
