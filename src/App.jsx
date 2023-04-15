@@ -26,7 +26,6 @@ function App() {
       })
       .catch((error) => console.error(error));
   }, []);
-
   React.useEffect(() => {
     const data = localStorage.getItem('value');
     if (data && data != 0) {
@@ -34,17 +33,8 @@ function App() {
     }
   }, []);
   React.useEffect(() => {
-    const data = localStorage.getItem('location');
-    if (data) {
-      setCount(JSON.parse(data));
-    }
-  }, []);
-  React.useEffect(() => {
     localStorage.setItem('value', JSON.stringify(count));
   }, [count]);
-  React.useEffect(() => {
-    localStorage.setItem('location', JSON.stringify(placeh));
-  }, [placeh]);
   return (
     <div>
       <div className="card">
